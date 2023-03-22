@@ -1,22 +1,30 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
- * main - Prints all the numbers of base 16 in lowercase.
- *
- * Return: Always 0.
+ * times_table - Prints the 9 times table, starting 0.
  */
-int main(void)
+void times_table(void)
 {
-	int num;
-	char letter;
+	int num, mult, prod;
 
-	for (num = 0; num < 10; num++)
-		putchar((num % 10) + '0');
+	for (num = 0; num <= 9; num++)
+	{
+		_putchar('0');
 
-	for (letter = 'a'; letter <= 'f'; letter++)
-		putchar(letter);
+		for (mult = 1; mult <= 9; mult++)
+		{
+			_putchar(',');
+			_putchar(' ');
 
-	putchar('\n');
+			prod = num * mult;
 
-	return (0);
+			if (prod <= 9)
+				_putchar(' ');
+			else
+				_putchar((prod / 10) + '0');
+
+			_putchar((prod % 10) + '0');
+		}
+		_putchar('\n');
+	}
 }
