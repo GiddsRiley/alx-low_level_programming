@@ -1,29 +1,41 @@
 #include "main.h"
-
 /**
- * _sqrt_recursion - main funct
- * @n: int n
- * Return: Success (int)
- */
-int _sqrt_recursion(int n)
+* is_square_root - Entry point
+* *@num: accepts input saved
+* *@squared: accepts input saved into squared
+* Return: Success
+*/
+int is_square_root(int num, int squared)
 {
-	return (_sqrt(n, 1));
+	if ((squared * squared) == num)
+	{
+		return (squared);
+	}
+	else if (squared == num / 2)
+	{
+		return (-1);
+	}
+	return (is_square_root(num, squared + 1));
 }
 
+
 /**
- * _sqrt - _sqrt_recursion
- * @n: integer paramtr
- * @i: integer parameter
- * Return: square root
- */
-int _sqrt(int n, int i)
+* _sqrt_recursion - Entry point
+* *@n: accepts an input saved into n
+* Return: Success (integer)
+*/
+int _sqrt_recursion(int n)
 {
+	int squared = 0;
+
 	if (n < 0)
+	{
 		return (-1);
-	if ((i * i) > n)
-		return (-1);
-	if (i * i == n)
-		return (i);
-	return (_sqrt(n, i + 1));
+	}
+	else if (n == 1)
+	{
+		return (1);
+	}
+	return (is_square_root(n, squared));
 }
 
