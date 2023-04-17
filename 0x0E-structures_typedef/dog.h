@@ -4,7 +4,7 @@
 /**
  * struct dog - struct that keeps information of a dog.
  * @name: dog name.
- * @age: gog age.
+ * @age: dog age.
  * @owner: dog owner.
  * Description: struct called "dog" that stores its name, age
  * and owner name.
