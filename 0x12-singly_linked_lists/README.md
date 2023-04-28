@@ -14,4 +14,3 @@ In a Singly linked list there is only one pointer type variable, that contains t
 Implementation of Singly Linked List in C
 
 We implement Linked List  using user defined data type, with the help of structure or struct. Since Singly linked list has only 1 pointer type value, which means it can store the address of only one node, which will be  the next to it. As a result, we can only move in one direction in a Singly Linked List i.e; from head to tail, which makes traversing a linked list more difficult. Implementing  linked list  rather than using array is better, since the insertion and deletion operations in  Linked List are less complicated and less time consuming in comparison with arrays.
-
