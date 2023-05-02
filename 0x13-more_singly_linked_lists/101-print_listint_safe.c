@@ -4,10 +4,8 @@
 
 /**
 * find_listint_loop_pl - finds a loop in a linked list
-*
-* @head: searched linked list
-*
-* Return: address of node where loop begins/returns, NULL if no loop
+* @head: linked list to search
+* Return: address of node where loop starts/returns, NULL if no loop
 */
 
 listint_t *find_listint_loop_pl(listint_t *head)
@@ -16,34 +14,22 @@ listint_t *find_listint_loop_pl(listint_t *head)
 
 	if (head == NULL)
 		return (NULL);
-	Node *end;
-	Node *ptr;
 
 	for (end = head->next; end != NULL; end = end->next)
 	{
-	if (end == end->next)
-	{
-	return (end);
+		if (end == end->next)
+			return (end);
+		for (ptr = head; ptr != end; ptr = ptr->next)
+			if (ptr == end->next)
+				return (end->next);
 	}
-	for (ptr = head; ptr != end; ptr = ptr->next)
-	{
-	if (ptr == end->next)
-	{
-	return (end->next);
-	}
-	}
-	}
-
 	return (NULL);
 }
 
 /**
-* print_listint_safe - prints a linked list, even if it
-* has a loop
-*
-* @head: head of list to print
-*
-* Return: number of nodes printed
+* print_listint_safe - prints a linked list, even with loop
+* @head: head of list
+* Return: nodes printed
 */
 
 size_t print_listint_safe(const listint_t *head)
