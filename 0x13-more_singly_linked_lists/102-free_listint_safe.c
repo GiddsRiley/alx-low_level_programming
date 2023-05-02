@@ -24,7 +24,7 @@ size_t free_listint_safe(listint_t **h)
 			i++;
 		} else
 		{
-			free(actual);
+			free(act);
 			*h = NULL;
 			i++;
 			break;
