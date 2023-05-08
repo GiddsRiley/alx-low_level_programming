@@ -33,7 +33,7 @@ int create_file(const char *filename, char *text_content)
 
 	rw = write(fd, text_content, nlet);
 
-	if (rwr == -1)
+	if (rw == -1)
 		return (-1);
 
 	close(fd);
